@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>EZIS COSMETICS</title>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="images/l.png" alt="EZIS Logo"/>
+        <div class="header-links">
+            <a href="#" id="home-link" class="active">HOME</a>
+            <a href="#" id="products-link">PRODUCTS</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+            <button class="btn">LOGIN</button>
+        </div>     
+    </div>
+
+    <!-- قسم الـ HOME -->
+    <div class="landing-page" id="home-section">
+        <div class="landing-page-left">
+            <span>WELCOME TO EZIS...</span>    
+            <h1>EZIS COSMETICS</h1>
+            <p>Discover the perfect Lip Gloss collection at EZIS Cosmetics.
+            Our high-quality lip glosses deliver brilliant shine, smooth hydration, and long-lasting comfort.
+            Whether you love a natural glossy finish or a bold, glamorous look,
+            you'll find the perfect shade to complete your style.</p>
+            <div class="search">
+                <input placeholder="type here..."/>
+                <button class="btn">Search</button>
+            </div>
+        </div>
+        <div class="landing-image">
+            <img src="images/6014811483272842462.jpg" alt="Lip Gloss Collection"/> 
+        </div>
+    </div>
+
+    <!-- قسم الـ PRODUCTS (مخفي في البداية) -->
+    <div class="products-section hidden" id="products-section">
+        <span>PRODUCTS</span>
+        <div class="products">
+            <h1>Our Products</h1>
+            <button class="btn">View All</button>
+        </div>
+
+        <div class="product-cards"> 
+            <div class="card">
+                <img src="images/6014811483272842465.jpg" alt="Rose Lip Gloss"/>
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Shimmer edition</p>
+                        <h3>Rose</h3>
+                    </div>
+                    <a href="#">
+                        <img src="images/prod.png" alt="Cart Icon"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/6014811483272842466.jpg" alt="Glossy Edition Lip Gloss"/>
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Shimmer edition</p>
+                        <h3>Glossy edition</h3>
+                    </div>
+                    <a href="#">
+                        <img src="images/prod.png" alt="Cart Icon"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/6014811483272842467.jpg" alt="Golden Rose Lip Gloss"/>
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Shimmer edition</p>
+                        <h3>Golden rose</h3>
+                    </div>
+                    <a href="#">
+                        <img src="images/prod.png" alt="Cart Icon"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/6014811483272842468.jpg" alt="Cherry Lip Gloss"/>
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Shimmer edition</p>
+                        <h3>Cherry</h3>
+                    </div>
+                    <a href="#">
+                        <img src="images/prod.png" alt="Cart Icon"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript للتبديل بين الصفحات -->
+    <script>
+        const homeLink = document.getElementById('home-link');
+        const productsLink = document.getElementById('products-link');
+        const homeSection = document.getElementById('home-section');
+        const productsSection = document.getElementById('products-section');
+
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            homeSection.classList.remove('hidden');
+            productsSection.classList.add('hidden');
+            homeLink.classList.add('active');
+            productsLink.classList.remove('active');
+        });
+
+        productsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            productsSection.classList.remove('hidden');
+            homeSection.classList.add('hidden');
+            productsLink.classList.add('active');
+            homeLink.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
